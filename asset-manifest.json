@@ -1,16 +1,15 @@
 {
   "files": {
-    "main.css": "/Abhishek-stark-reactapp/static/css/main.073c9b0a.css",
-    "main.js": "/Abhishek-stark-reactapp/static/js/main.130b65e8.js",
+    "main.css": "/Abhishek-stark-reactapp/static/css/main.a9e4116b.css",
+    "main.js": "/Abhishek-stark-reactapp/static/js/main.ddf20842.js",
     "static/js/787.9bb9c642.chunk.js": "/Abhishek-stark-reactapp/static/js/787.9bb9c642.chunk.js",
-    "static/media/logo.svg": "/Abhishek-stark-reactapp/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
     "index.html": "/Abhishek-stark-reactapp/index.html",
-    "main.073c9b0a.css.map": "/Abhishek-stark-reactapp/static/css/main.073c9b0a.css.map",
-    "main.130b65e8.js.map": "/Abhishek-stark-reactapp/static/js/main.130b65e8.js.map",
+    "main.a9e4116b.css.map": "/Abhishek-stark-reactapp/static/css/main.a9e4116b.css.map",
+    "main.ddf20842.js.map": "/Abhishek-stark-reactapp/static/js/main.ddf20842.js.map",
     "787.9bb9c642.chunk.js.map": "/Abhishek-stark-reactapp/static/js/787.9bb9c642.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.073c9b0a.css",
-    "static/js/main.130b65e8.js"
+    "static/css/main.a9e4116b.css",
+    "static/js/main.ddf20842.js"
   ]
 }
