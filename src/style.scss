@@ -1,3 +1,9 @@
 .formmain {
+    position: absolute;
+    margin-top: 200px;
+    margin-left: 40%;
     background-color: aqua;
+    &--email>input {
+        border: none;
+    }
 }
