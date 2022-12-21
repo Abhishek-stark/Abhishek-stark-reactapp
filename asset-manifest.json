@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/Abhishek-stark-reactapp/static/css/main.13e7b4f7.css",
-    "main.js": "/Abhishek-stark-reactapp/static/js/main.a258c902.js",
+    "main.css": "/Abhishek-stark-reactapp/static/css/main.60933115.css",
+    "main.js": "/Abhishek-stark-reactapp/static/js/main.719f5556.js",
     "static/js/787.9bb9c642.chunk.js": "/Abhishek-stark-reactapp/static/js/787.9bb9c642.chunk.js",
     "index.html": "/Abhishek-stark-reactapp/index.html",
-    "main.13e7b4f7.css.map": "/Abhishek-stark-reactapp/static/css/main.13e7b4f7.css.map",
-    "main.a258c902.js.map": "/Abhishek-stark-reactapp/static/js/main.a258c902.js.map",
+    "main.60933115.css.map": "/Abhishek-stark-reactapp/static/css/main.60933115.css.map",
+    "main.719f5556.js.map": "/Abhishek-stark-reactapp/static/js/main.719f5556.js.map",
     "787.9bb9c642.chunk.js.map": "/Abhishek-stark-reactapp/static/js/787.9bb9c642.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.13e7b4f7.css",
-    "static/js/main.a258c902.js"
+    "static/css/main.60933115.css",
+    "static/js/main.719f5556.js"
   ]
 }
