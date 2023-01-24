@@ -1,3 +1,10 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-size: 62.5%rem;
+    box-sizing: border-box;
+}
+
 .formmain {
     position: absolute;
     margin-top: 200px;
@@ -12,4 +19,31 @@
     width: 40rem;
     height: 40rem;
     z-index: 2000;
+}
+
+.navContainer {
+    background-color: rgb(15, 16, 50);
+    padding: 1.6rem;
+    // margin-top: 5px;
+    &__link {
+        color: #fff;
+        font-size: 1.4rem;
+        display: flex;
+        flex-wrap: wrap-reverse;
+        justify-content: end;
+        & li {
+            list-style: none;
+            & a {
+                text-decoration: none;
+                font-weight: 650;
+                color: white;
+            }
+        }
+        & li:not(:last-child) {
+            margin-right: 2rem;
+        }
+        &__link--2 {
+            margin-left: auto;
+        }
+    }
 }
