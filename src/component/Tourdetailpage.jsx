@@ -113,7 +113,7 @@ const Tourdetailpage = () => {
           <div className="detail_cover">
             <span> {tourdetail.tour.name} </span>{" "}
             <img
-              src={tourdetail.tour.imageCover}
+              src={`./Abhishek-stark-reactapp/${tourdetail.tour.imageCover}`}
               alt=""
               className="image_cover_class"
             />
@@ -128,7 +128,7 @@ const Tourdetailpage = () => {
               return (
                 <img
                   key={index}
-                  src={e}
+                  src={`./Abhishek-stark-reactapp/${e}`}
                   alt="user_img"
                   className=" tour_images "
                 />
@@ -141,7 +141,10 @@ const Tourdetailpage = () => {
                 <div className="detail_card" key={index}>
                   <div key={index}>
                     <div className="guide_image">
-                      <img src={guidence.photo} alt="GuidesImg" />
+                      <img
+                        src={`./Abhishek-stark-reactapp/${guidence.photo}`}
+                        alt="GuidesImg"
+                      />
                     </div>
                     <span style={{ color: "yellow" }}>{guidence.name}</span>
                   </div>
@@ -153,7 +156,10 @@ const Tourdetailpage = () => {
 
             <div className="book_tour_button">
               <div className="bok_btn_user_img">
-                <img src={user.photo} alt="user_img" />
+                <img
+                  src={`./Abhishek-stark-reactapp/${user.photo}`}
+                  alt="user_img"
+                />
               </div>
               <p>Book your Tour now and enjoy your Weekend ...</p>
               <button
@@ -175,7 +181,7 @@ const Tourdetailpage = () => {
                 <div className="review_card" key={i}>
                   <div className="review_img_cover">
                     <img
-                      src={user.photo}
+                      src={`./Abhishek-stark-reactapp/${user.photo}`}
                       alt="user_img"
                       className="review_user_img"
                     />

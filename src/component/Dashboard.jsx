@@ -1,12 +1,12 @@
-import { React, useState, useEffect } from 'react';
-import { useNavigate, Link } from 'react-router-dom';
-import { useSelector, useDispatch } from 'react-redux';
-import { reset, update, getAllusers } from '../reducers/authSlice';
-import Error from './Error';
+import { React, useState, useEffect } from "react";
+import { useNavigate, Link } from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux";
+import { reset, update, getAllusers } from "../reducers/authSlice";
+import Error from "./Error";
 
-import './dashboard.css';
-import Loading from './Loading';
-import Success from './Success';
+import "./dashboard.css";
+import Loading from "./Loading";
+import Success from "./Success";
 // import Homepage from './Homepage';
 const Dashboard = () => {
   // const [formdata, setformdata] = useState({
@@ -40,30 +40,30 @@ const Dashboard = () => {
     if (isSuccess) {
       <Success />;
 
-      navigate('/login');
+      navigate("/login");
     }
     dispatch(reset());
   }, [isLoading, isError, isSuccess, message, dispatch, navigate]);
   const goLogin = (e) => {
     e.preventDefault();
-    navigate('/login');
+    navigate("/login");
   };
   const goRegister = (e) => {
     e.preventDefault();
-    navigate('/register');
+    navigate("/register");
   };
 
   const goTourpage = (e) => {
     e.preventDefault();
-    navigate('/');
+    navigate("/");
   };
 
   const onSubmit = (e) => {
     e.preventDefault();
     const formdata = new FormData();
-    formdata.append('name', document.getElementById('name').value);
-    formdata.append('email', document.getElementById('email').value);
-    formdata.append('photo', document.getElementById('photo').files[0]);
+    formdata.append("name", document.getElementById("name").value);
+    formdata.append("email", document.getElementById("email").value);
+    formdata.append("photo", document.getElementById("photo").files[0]);
 
     // console.log(formdata);
 
@@ -73,36 +73,40 @@ const Dashboard = () => {
   return (
     <>
       <div className="update_container">
-        {' '}
+        {" "}
         {user ? (
           <>
             <div className="left_userinfo">
               <ul className="user_datas">
                 <li className="image_data">
-                  <img className="user_image" src={user.photo} alt="user_img" />
+                  <img
+                    className="user_image"
+                    src={`./Abhishek-stark-reactapp/${user.photo}`}
+                    alt="user_img"
+                  />
                   <input
                     type="file"
                     placeholder="Update Photo"
                     id="photo"
                     name="photo"
-                    style={{ display: 'none' }}
+                    style={{ display: "none" }}
                     accept="image/*"
                   />
                   <label htmlFor="photo" id="userlabel">
-                    Select Photo{' '}
-                  </label>{' '}
-                </li>{' '}
+                    Select Photo{" "}
+                  </label>{" "}
+                </li>{" "}
                 <li>
-                  <Link to="/updatePassword"> Update Password </Link>{' '}
-                </li>{' '}
+                  <Link to="/updatePassword"> Update Password </Link>{" "}
+                </li>{" "}
                 <li>
-                  <Link to=""> Get Tour </Link>{' '}
-                </li>{' '}
+                  <Link to=""> Get Tour </Link>{" "}
+                </li>{" "}
                 <li>
-                  <Link to="/"> Home </Link>{' '}
+                  <Link to="/"> Home </Link>{" "}
                 </li>
-              </ul>{' '}
-            </div>{' '}
+              </ul>{" "}
+            </div>{" "}
             <div className="right_userinfo">
               <form onSubmit={onSubmit} className="update_form">
                 <input
@@ -110,23 +114,23 @@ const Dashboard = () => {
                   id="name"
                   name="name"
                   defaultValue={user.name}
-                />{' '}
+                />{" "}
                 <input
                   type="text"
                   id="email"
                   name="email"
                   defaultValue={user.email}
-                />{' '}
+                />{" "}
                 <button type="submit" id="update_btn">
-                  update setting{' '}
-                </button>{' '}
-              </form>{' '}
-            </div>{' '}
+                  update setting{" "}
+                </button>{" "}
+              </form>{" "}
+            </div>{" "}
           </>
         ) : (
           <h2> Your Are not Logged in !! </h2>
-        )}{' '}
-      </div>{' '}
+        )}{" "}
+      </div>{" "}
     </>
   );
 };
