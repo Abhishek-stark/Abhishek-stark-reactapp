@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkmy_git_app=self.webpackChunkmy_git_app||[]).push([[969],{7969:function(e,s,n){n.r(s);n(2791);var r=n(184);s.default=function(){var e=localStorage.getItem("user"),s=JSON.parse(e);return console.log(document.cookie),(0,r.jsxs)("div",{children:[(0,r.jsxs)("div",{children:[" ",s?(0,r.jsxs)("p",{children:[" ",s.user.name," "]}):(0,r.jsx)("span",{children:"no user"})," "]})," "]})}}}]);
+//# sourceMappingURL=969.abad28cf.chunk.js.map
