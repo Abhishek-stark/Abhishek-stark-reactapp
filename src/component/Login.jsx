@@ -1,17 +1,15 @@
-import { useState, useEffect } from 'react';
-import './login.css';
-import axios from 'axios';
-import { useNavigate, Link } from 'react-router-dom';
-import { useSelector, useDispatch } from 'react-redux';
-import { login, reset, getAllusers } from '../reducers/authSlice';
-import Loading from './Loading';
-import Error from './Error';
+import { useState, useEffect } from "react";
+import "./login.css";
+import { useNavigate } from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux";
+import { login, reset } from "../reducers/authSlice";
+import Loading from "./Loading";
 
 function Login() {
   const [errorshow, seterrorshow] = useState(false);
   const [formData, setFormData] = useState({
-    email: '',
-    password: '',
+    email: "",
+    password: "",
   });
 
   const { email, password } = formData;
@@ -29,17 +27,20 @@ function Login() {
 
       seterrorshow(true);
     }
-
-    if (isSuccess) {
-      navigate('/');
+    if (isLoading) {
+      <Loading />;
     }
 
-    if (user && user.role === 'admin') {
-      navigate('/admin');
+    if (isSuccess) {
+      navigate("/");
+    }
+
+    if (user && user.role === "admin") {
+      navigate("/admin");
     }
 
     dispatch(reset());
-  }, [user, isError, isSuccess, message, navigate, dispatch]);
+  }, [user, isError, isSuccess, message, navigate, dispatch, isLoading]);
 
   const onChange = (e) => {
     setFormData((prevState) => ({
@@ -62,22 +63,19 @@ function Login() {
     }, 2000);
   };
 
-  if (isLoading) {
-    <Loading />;
-  }
-  const sendpasswordReset = async () => {
-    try {
-      const response = await axios.post(
-        'http://localhost:8000/api/v1/users/forgotPassword',
-        email
-      );
+  // const sendpasswordReset = async () => {
+  //   try {
+  //     const response = await axios.post(
+  //       "http://localhost:8000/api/v1/users/forgotPassword",
+  //       email
+  //     );
 
-      // window.location.reload();
-      return response;
-    } catch (error) {
-      console.warn(error.message);
-    }
-  };
+  //     // window.location.reload();
+  //     return response;
+  //   } catch (error) {
+  //     console.warn(error.message);
+  //   }
+  // };
 
   return (
     <>
@@ -94,8 +92,8 @@ function Login() {
               name="email"
               placeholder="Enter your email"
               onChange={onChange}
-            />{' '}
-          </div>{' '}
+            />{" "}
+          </div>{" "}
           <div className="form-group">
             <input
               type="password"
@@ -104,15 +102,15 @@ function Login() {
               name="password"
               placeholder="Enter password"
               onChange={onChange}
-            />{' '}
-          </div>{' '}
+            />{" "}
+          </div>{" "}
           <div className="form-group">
             <button type="submit" className="btn btn-block">
-              Submit{' '}
-            </button>{' '}
-          </div>{' '}
-        </form>{' '}
-      </section>{' '}
+              Submit{" "}
+            </button>{" "}
+          </div>{" "}
+        </form>{" "}
+      </section>{" "}
     </>
   );
 }

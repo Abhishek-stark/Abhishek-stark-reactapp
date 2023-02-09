@@ -7,22 +7,8 @@ import Error from "./Error";
 import "./dashboard.css";
 import Loading from "./Loading";
 import Success from "./Success";
-// import Homepage from './Homepage';
+
 const Dashboard = () => {
-  // const [formdata, setformdata] = useState({
-  //   name: '',
-  //   email: '',
-
-  //   // passwordCurrent: '',
-  //   // password: '',
-  //   // passwordConfirm: '',
-  // });
-  // const [photodata, setphotodata] = useState({
-  //   photo: '',
-  // });
-  // const { photo } = photodata;
-  // const { name, email } = formdata;
-
   const dispatch = useDispatch();
 
   const navigate = useNavigate();
@@ -44,19 +30,19 @@ const Dashboard = () => {
     }
     dispatch(reset());
   }, [isLoading, isError, isSuccess, message, dispatch, navigate]);
-  const goLogin = (e) => {
-    e.preventDefault();
-    navigate("/login");
-  };
-  const goRegister = (e) => {
-    e.preventDefault();
-    navigate("/register");
-  };
+  // const goLogin = (e) => {
+  //   e.preventDefault();
+  //   navigate("/login");
+  // };
+  // const goRegister = (e) => {
+  //   e.preventDefault();
+  //   navigate("/register");
+  // };
 
-  const goTourpage = (e) => {
-    e.preventDefault();
-    navigate("/");
-  };
+  // const goTourpage = (e) => {
+  //   e.preventDefault();
+  //   navigate("/");
+  // };
 
   const onSubmit = (e) => {
     e.preventDefault();

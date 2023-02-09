@@ -1,5 +1,5 @@
 import { React, useState, useEffect } from "react";
-import { Navigate, useLocation, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import "./tourdetail.css";
 // import GradeIcon from '@mui/icons-material/Grade';
 import { loadStripe } from "@stripe/stripe-js";
@@ -9,7 +9,7 @@ import Error from "./Error";
 // import { experimentalStyled } from '@mui/material';
 
 const Tourdetailpage = () => {
-  const params = useLocation();
+  // const params = useLocation();
   const navigate = useNavigate();
   const tourdetail = JSON.parse(localStorage.getItem("tourdetail"));
   const user = JSON.parse(localStorage.getItem("user"));
@@ -21,11 +21,6 @@ const Tourdetailpage = () => {
   });
 
   const { review, rating } = reviewdata;
-  var j = 1;
-
-  // tourdetail.tour[3].map((userid, index) => {
-  //   console.log(userid);
-  // });
 
   const onchangereview = (e) => {
     e.preventDefault();
@@ -41,7 +36,7 @@ const Tourdetailpage = () => {
     let token = user.token;
     try {
       const response = await axios.post(
-        "http://127.0.0.1:8000/api/v1/reviews",
+        "https://apifortour.onrender.com/api/v1/reviews",
         data,
         {
           headers: {
@@ -81,7 +76,7 @@ const Tourdetailpage = () => {
       );
       // 1) Get checkout session from API
       const session = await axios.get(
-        `http://127.0.0.1:8000/api/v1/bookings/checkout-session/${tourId}`,
+        `https://apifortour.onrender.com/api/v1/bookings/checkout-session/${tourId}`,
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -217,13 +212,6 @@ const Tourdetailpage = () => {
                         });
                       }
                     });
-                    // setwriteReview(false);
-                    // console.log('under else');
-                    // setreviewdata({
-                    //   review: '',
-                    //   rating: '',
-                    // });
-                    //
                   }}
                 >
                   Write Review

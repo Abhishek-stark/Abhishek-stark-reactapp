@@ -1,15 +1,15 @@
-import { React, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { React, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 const ProtectedRouted = (props) => {
   const { Component } = props;
-  const user = localStorage.getItem('user');
+  const user = localStorage.getItem("user");
   const navigate = useNavigate();
   useEffect(() => {
     if (!user) {
-      navigate('/login');
+      navigate("/login");
     }
-  }, []);
+  }, [navigate, user]);
 
   return (
     <div>

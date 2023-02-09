@@ -2,11 +2,11 @@ import { React, useEffect, useState } from "react";
 import { useNavigate, Link, useLocation } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { reset, logout } from "../reducers/authSlice";
-import axios from "axios";
+
 import Error from "./Error";
 import "./homepage.css";
 import Loading from "./Loading";
-import Tourdetailpage from "./Tourdetailpage";
+
 const Homepage = () => {
   const dispatch = useDispatch();
   const location = useLocation();
@@ -25,9 +25,7 @@ const Homepage = () => {
       setstate(true);
       // Tourname = tourdetail.tour.name;
     }
-    // if (detail === '/admin') {
-    //   Tourname = 'All Users';
-    // }
+
     if (detail === "/") {
       setstate(false);
     }
@@ -40,11 +38,19 @@ const Homepage = () => {
     }
     if (isSuccess) {
       // if (user) navigate('/tours');
-      if (user) console.log("change here in homepage jsx");
-      else navigate("/login");
+      if (!user) navigate("/login");
     }
     dispatch(reset());
-  }, [user, isLoading, isError, isSuccess, message, dispatch, navigate]);
+  }, [
+    user,
+    isLoading,
+    isError,
+    isSuccess,
+    message,
+    dispatch,
+    navigate,
+    location.pathname,
+  ]);
   const OnLogout = (e) => {
     e.preventDefault();
 
@@ -68,9 +74,6 @@ const Homepage = () => {
     }
   }
 
-  // if(detail === "/"){
-  //   Tourname = "All Tours"
-  // }
   return (
     <>
       <div className="homepage_class">

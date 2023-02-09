@@ -5,16 +5,12 @@ import { useSelector } from "react-redux";
 import "./tourpage.css";
 import axios from "axios";
 import Error from "./Error";
-import Tourdetailpage from "./Tourdetailpage";
 
 const Tourpage = () => {
-  const params = useLocation();
+  // const params = useLocation();
   // console.log(params);
   const [tour, settour] = useState();
-  // const [tourdetails, settourdetails] = useState({
-  //   descriptions: '',
-  //   difficultys: '',
-  // });
+
   const navigate = useNavigate();
 
   const { user } = useSelector((state) => state.auth);
@@ -92,15 +88,6 @@ const Tourpage = () => {
                                 "tourdetail",
                                 JSON.stringify(response.data)
                               );
-                            // settourdetails(...[response.data]);
-                            // console.log(tourdetails);
-                            // const { tour } = response.data;
-                            // settourdetails({
-                            //   descriptions: `${tour.description}`,
-                            //   difficultys: tour,
-                            // });
-                            // console.log(tour);
-                            // console.log(tourdetails);
 
                             navigate("/tourdetail");
                           }
